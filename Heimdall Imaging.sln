@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B41546FD-16BE-43B5-ADE0-A062CAB730FC}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+		Performance2.psess = Performance2.psess
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighSpecter", "HighSpecter\HighSpecter.csproj", "{1D8E5CBC-BF95-4A6A-AC38-EE02651026DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectralCommand", "SpectralCommand\SpectralCommand.csproj", "{1D616E94-CE30-4521-AC27-890C54058F70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D8E5CBC-BF95-4A6A-AC38-EE02651026DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8E5CBC-BF95-4A6A-AC38-EE02651026DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8E5CBC-BF95-4A6A-AC38-EE02651026DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8E5CBC-BF95-4A6A-AC38-EE02651026DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D616E94-CE30-4521-AC27-890C54058F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D616E94-CE30-4521-AC27-890C54058F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D616E94-CE30-4521-AC27-890C54058F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D616E94-CE30-4521-AC27-890C54058F70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D8E5CBC-BF95-4A6A-AC38-EE02651026DB} = {B41546FD-16BE-43B5-ADE0-A062CAB730FC}
+		{1D616E94-CE30-4521-AC27-890C54058F70} = {B41546FD-16BE-43B5-ADE0-A062CAB730FC}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

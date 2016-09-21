@@ -1,0 +1,445 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:src="clr-namespace:SpectralCommand"
+
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+    xmlns:spectralCommand="clr-namespace:SpectralCommand"
+    xmlns:Properties="clr-namespace:SpectralCommand.Properties"
+    xmlns:resources="clr-namespace:SpectralCommand"
+    mc:Ignorable="d"
+    x:Name="TheMainWindow" x:Class="SpectralCommand.MainWindow"
+    Title="Spectral Command" Height="519.333" Width="846.833" BorderThickness="3,0,0,0" Background="#FF1B1B1B"
+    Icon="Resources/Ghost.png" MinWidth="350" MinHeight="350" BorderBrush="Black" FontSize="13" FontWeight="Bold"
+    ResizeMode="CanResizeWithGrip" SnapsToDevicePixels="True" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+    ToolTip="Order The Ghostly Elements">
+    <Window.Resources>
+        <src:FontResizer x:Key="fontSizeCon" />
+
+    </Window.Resources>
+
+    <Grid Background="#FF282828" Margin="-4,0,-1,-0.333">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="200*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="117*"/>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="44*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TabControl x:Name="TabControlMain" Margin="0,0,0,0.667" Grid.Row="1" Grid.ColumnSpan="7" SelectedIndex="0">
+            <TabItem Header="Control" Margin="-2,0,-1.667,-7.667" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Foreground="Black" Background="#FF8F8F8F" BorderBrush="#FFACACAC">
+                <Grid Background="#FF282828" Margin="-4,0,-1,-0.333">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="87*" />
+                        <ColumnDefinition Width="347*" />
+                        <ColumnDefinition Width="76*" />
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="104*"/>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="93*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Slider x:Name="UI_setExposure" ValueChanged="Exposure_ValueChanged" RenderTransformOrigin="0.806,0.558"
+                        Margin="1" Grid.Row="1" Panel.ZIndex="-1" Maximum="4.7"
+                        TickPlacement="BottomRight" Ticks="{x:Null}" LargeChange="0.1" SelectionStart="-1" TickFrequency="0.1" Minimum="1.5" HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch" Grid.Column="1" ToolTip="Shutter speed" SmallChange="0.05" Value="2" />
+                    <Label x:Name="UI_DisplayLight1" Content="☼" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="10,6,9.333,7.333" Padding="0" ToolTip="L1" HorizontalContentAlignment="Center"
+                       Grid.Row="1" Grid.Column="7" />
+                    <Label x:Name="UI_DisplayLight2" Content="☼" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="10,6.667,9.333,7.333" Padding="0" ToolTip="L2" Grid.Column="7"
+                       HorizontalContentAlignment="Center" Grid.Row="2" />
+                    <Label x:Name="StaticLabel10" Content="Light:" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light" Padding="0"
+                       Margin="10,5,2.333,10" HorizontalContentAlignment="Center" Grid.Column="7" />
+                    <Label x:Name="StaticLabel9" Content="GPS:" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light" Grid.Row="1"
+                       Padding="0" Margin="0,7,1,7" HorizontalContentAlignment="Center" Grid.Column="5" Grid.ColumnSpan="2" />
+                    <Label x:Name="StaticLabel5" Content="Exp." Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light" Grid.Row="1"
+                       Padding="0" Margin="1,7" HorizontalContentAlignment="Center" />
+                    <Label x:Name="UI_DisplayGPS2" Content="☼" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="0,7,1,7" Grid.Row="3" Padding="0" ToolTip="L1" Grid.Column="5"
+                       HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
+                    <Label x:Name="UI_DisplayGPS1" Content="☼" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="0,7,1,7" Grid.Row="2" Padding="0" ToolTip="L1"
+                       HorizontalContentAlignment="Center" Grid.Column="5" RenderTransformOrigin="-0.163,-0.343" Grid.ColumnSpan="2" />
+                    <Label x:Name="StaticLabel3" Content="ms" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="1,7" Grid.Row="1" Padding="0" ToolTip="L1"
+                       HorizontalContentAlignment="Center" Grid.Column="3" />
+                    <Label x:Name="StaticLabel4" Content="Controls" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Semilight" Padding="0"
+                       Margin="10,1,103,1" HorizontalContentAlignment="Center" FontStretch="SemiCondensed" Grid.Column="1" />
+                    <Label x:Name="StaticLabel6" Content="FPS" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light" Grid.Row="2"
+                       Padding="0" Margin="1,7" HorizontalContentAlignment="Center" />
+                    <Slider x:Name="UI_setImagingFreq" ValueChanged="FPS_ValueChanged" RenderTransformOrigin="0.806,0.558"
+                        Margin="1" Grid.Row="2" Panel.ZIndex="-1"
+                        TickPlacement="BottomRight" Ticks="{x:Null}" SelectionStart="-1" Minimum="0.1" HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch" Value="1" Grid.Column="1" ToolTip="How many Images will be taken every second" TickFrequency="0.5" />
+                    <Label x:Name="StaticLabel1" Content="fps" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="1,7" Grid.Row="2" Padding="0" ToolTip="L1" HorizontalContentAlignment="Center"
+                       Grid.Column="3" />
+                    <Label x:Name="UI_ImagesTaken" Content="img" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="10,8,11,6" Grid.Row="4" Padding="0,0,10,0" ToolTip="L1"
+                       HorizontalContentAlignment="Right" Grid.Column="6" Grid.ColumnSpan="2" />
+                    <Button x:Name="UI_Image_Button" Content="Start" Margin="2,5" Click="Start_Imaging"
+                        Background="#FF363636" Foreground="White" MinWidth="10" MinHeight="10"
+                        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                        VerticalContentAlignment="Center" ToolTip="This does stuff" Grid.Row="5" IsEnabled="False" Grid.ColumnSpan="2" Grid.Column="6" />
+                    <Label x:Name="UI_RemoteExposure" Content="? ms" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="1,7,2,7" Grid.Row="1" Padding="0,0,10,0" ToolTip="L1"
+                       HorizontalContentAlignment="Right" Grid.Column="4" />
+                    <Label x:Name="UI_RemoteFps" Content="? fps" Foreground="#FFD0D0D0"
+                       FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                       VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                       Margin="1,7,2,7" Grid.Row="2" Padding="0,0,10,0" ToolTip="L1"
+                       HorizontalContentAlignment="Right" Grid.Column="4" />
+                    <Label x:Name="StaticLabel8" Content="Telemetry:" Foreground="#FFD0D0D0"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	        VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Semilight" Padding="0"
+        	        Margin="10,1" HorizontalContentAlignment="Center" FontStretch="SemiCondensed" Grid.Column="4" Grid.ColumnSpan="3" />
+                    <Label x:Name="StaticLabel7" Content="Gain" Foreground="#FFD0D0D0"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	        VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light" Grid.Row="3"
+        	        Padding="0" Margin="1,7" HorizontalContentAlignment="Center" />
+                    <Slider x:Name="UI_setGain" ValueChanged="Gain_ValueChanged" RenderTransformOrigin="0.806,0.558"
+        	        Margin="1" Grid.Row="3" Panel.ZIndex="-1"
+        	        TickPlacement="BottomRight" Ticks="{x:Null}" LargeChange="0.05" SelectionStart="-1" HorizontalContentAlignment="Stretch"
+        	        VerticalContentAlignment="Stretch" Value="1" SmallChange="0.5" Grid.Column="1" Maximum="15" ToolTip="Change gain (ISO) for the payload cameras." />
+                    <TextBox x:Name="UI_FeedbackGain" Margin="1,7,1,6" Grid.Row="3" TextWrapping="Wrap" Grid.Column="2" TextChanged="UI_FeedbackGain_TextChanged"
+                         HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                         FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                         Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0"/>
+                    <Label x:Name="StaticLabel2" Content="dB" Foreground="#FFD0D0D0"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	        VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+        	        Margin="1,7" Grid.Row="3" Padding="0" ToolTip="L1" HorizontalContentAlignment="Center"
+        	        Grid.Column="3" />
+                    <TextBox x:Name="UI_FeedbackImageFreq" Margin="1,7,1,6" Grid.Row="2" TextWrapping="Wrap" Grid.Column="2" TextChanged="UI_FeedbackFPS_TextChanged"
+        	        HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+        	        Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0"/>
+                    <TextBox x:Name="UI_FeedbackExposure" Margin="1,7" Grid.Row="1" TextWrapping="Wrap" Grid.Column="2" TextChanged="UI_FeedbackExposure_TextChanged" VerticalContentAlignment="Center"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+        	        Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center"/>
+                    <ComboBox x:Name="UI_selectBitDepth" Margin="200,5,65,7" Grid.Row="5" IsReadOnly="True" Background="Black" BorderBrush="Black" Foreground="Black" SelectedIndex="0" ToolTip="Choose bit depth of images, each displays relative CPU usage as" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" SelectionChanged="UI_BitDepthSelected" Grid.Column="1">
+                        <ComboBoxItem x:Name="UI_cItem_8bit" Content=" 8bit" Foreground="White" BorderBrush="#FF838383" Background="#FF2C2C2C" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
+                        <ComboBoxItem x:Name="UI_cItem_16bit" Content=" 16bit" Foreground="#FFFFFFF8" BorderBrush="#FF838383" Background="#FF2C2C2C" FontSize="{Binding ActualHeight,  Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
+                    </ComboBox>
+                    <Label x:Name="UI_RemoteGain" Content="? db" Foreground="#FFD0D0D0"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	        VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+        	        Margin="1,7,2,7" Grid.Row="3" Padding="0,0,10,0" ToolTip="L1"
+        	        HorizontalContentAlignment="Right" Grid.Column="4" />
+                    <ComboBox x:Name="UI_SelectFormat" Margin="10,5,230,7" Grid.Row="5" IsReadOnly="True" Background="Black" BorderBrush="Black" Foreground="Black" SelectedIndex="0" ToolTip="Choose bit depth of images" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Grid.IsSharedSizeScope="True" ScrollViewer.CanContentScroll="False" SelectionChanged="UI_FormatSelected" Grid.ColumnSpan="2">
+                        <ComboBoxItem x:Name="UI_cItem_seperate" Content="Sep. Channels" Foreground="White" BorderBrush="#FF838383" Background="#FF2C2C2C" FontSize="{Binding ActualHeight,  Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
+                        <ComboBoxItem x:Name="UI_cItem_combined" Content="Combined" Foreground="White" BorderBrush="#FF838383" Background="#FF2C2C2C" FontSize="{Binding ActualHeight,  Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
+                        <ComboBoxItem x:Name="UI_cItem_ThreeChan" Content="Three Channels" Foreground="White" BorderBrush="#FF838383" Background="#FF2C2C2C" FontSize="{Binding ActualHeight,  Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
+                    </ComboBox>
+                    <TextBox x:Name="UI_FoldernameInput" Margin="1,6,10,6"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	        VerticalContentAlignment="Center" TextWrapping="Wrap"
+        	        Cursor="Pen" ToolTip="Name folder where images will be stored" Text="" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A"
+        	        Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="999999" BorderThickness="1"
+        	        MinWidth="10" MinHeight="10" Padding="5,0,0,0" Grid.Column="1" VerticalScrollBarVisibility="Disabled"
+        	        HorizontalScrollBarVisibility="Disabled" IsUndoEnabled="False" Grid.Row="4" Grid.ColumnSpan="2" TextChanged="AlphanumericTextboxInputCheck" />
+                    <Label x:Name="StaticLabel12" Content="Folder" Margin="1,7" Grid.Row="4" Foreground="#FFD0D0D0" FontWeight="Normal"  FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"/>
+                    <Button x:Name="UI_Apply_Button" Content="Apply" Margin="2,5" Click="Send_Setting"
+        	        Background="#FF363636" Foreground="White" MinWidth="10" MinHeight="10"
+        	        FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	        VerticalContentAlignment="Center" ToolTip="This does stuff" Grid.Row="5" IsEnabled="False" Grid.Column="4" Grid.ColumnSpan="2" />
+                    <Label x:Name="UI_DisplayLightAVG" Content="☼" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,5.667,9.333,7.667" Padding="0" ToolTip="L2" Grid.Column="7"
+                    	HorizontalContentAlignment="Center" Grid.Row="3" />
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Log" Margin="-2,0,-1.667,-7.667" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Background="#FF939393">
+                <Grid Background="#FF282828">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="49*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="125*"/>
+                        <RowDefinition Height="17*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="UI_LogTextBlock" Margin="1,1,0,0.667" TextWrapping="Wrap" Grid.ColumnSpan="2" Foreground="#FFF0F0F0" FontSize="12" Background="#FF292929" UndoLimit="0" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" TextChanged="UI_LogTextBlock_TextChanged" IsReadOnly="True"/>
+                    <TextBox x:Name="UI_Textbox_AddtoLog" Margin="1,1.333,0,0.667" Grid.Row="1" TextWrapping="Wrap" Background="#FF2C2C2C" TextChanged="TextBox_TextChanged" Foreground="White"/>
+                    <Button x:Name="UI__AddtoLog_Button" Content="Add" Margin="1,0.333,0,0.667" Click="AddtoLog"
+                    	Background="#FF363636" Foreground="White" MinWidth="10" MinHeight="10"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" ToolTip="This adds anything you want to the log" IsEnabled="False" Grid.Row="1" Grid.Column="1" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Correction" Margin="-2,0,-1.667,-7.667" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Background="#FF939393">
+                <Grid Background="#FF282828" Margin="0,3,-0.333,-3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="Ycorrection0" Margin="11.667,10.333,8.333,9" TextWrapping="Wrap" TextChanged="UI_Ycorrection_textChanged" VerticalContentAlignment="Center"
+                		FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                		Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="2"/>
+                    <TextBox x:Name="Xcorrection0" Margin="11,10.333,8.333,7" TextWrapping="Wrap" TextChanged="UI_Xcorrection_textChanged" VerticalContentAlignment="Center"
+                		FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                		Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+                    <TextBlock x:Name="StaticLabel55" Margin="11,9.333,8.333,9.667" TextWrapping="Wrap" Text="XCorrection" Foreground="White" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock x:Name="StaticLabel56" Margin="11.667,9.333,8.333,9.667" TextWrapping="Wrap" Foreground="White" Grid.Row="1" Grid.Column="2"><Run Text="Y"/><Run Text="Correction"/></TextBlock>
+                    <TextBlock x:Name="StaticLabel50" Margin="10,10,10.333,10.667" TextWrapping="Wrap" Foreground="White" Grid.Row="2"><Run Text="Cam1"/><Run Text=" - IR"/></TextBlock>
+                    <TextBlock x:Name="StaticLabel51" Margin="10,11.333,10.333,10" TextWrapping="Wrap" Foreground="White" Grid.Row="3"><Run Text="Cam"/><Run Text="2"/><Run Text=" - Red"/></TextBlock>
+                    <TextBlock x:Name="StaticLabel57" Margin="11.667,9.333,11,9.667" TextWrapping="Wrap" Foreground="White" Grid.Row="1" Grid.Column="3" Text="Exp. correct"/>
+                    <TextBox x:Name="Ycorrection1" Margin="11.667,11,8.333,8.667" TextWrapping="Wrap" TextChanged="UI_Ycorrection_textChanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="3"/>
+                    <TextBox x:Name="Xcorrection1" Margin="11,11,8.333,8.667" TextWrapping="Wrap" TextChanged="UI_Xcorrection_textChanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+                    <TextBlock x:Name="StaticLabel52" Margin="10,12,10.333,7.667" TextWrapping="Wrap" Foreground="White" Grid.Row="4"><Run Text="Cam"/><Run Text="3"/></TextBlock>
+                    <TextBlock x:Name="StaticLabel53" Margin="10,9.333,10.333,10" TextWrapping="Wrap" Foreground="White" Grid.Row="5"><Run Text="Cam"/><Run Text="4"/></TextBlock>
+                    <TextBlock x:Name="StaticLabel58" Margin="9,10.333,10,9.667" TextWrapping="Wrap" Foreground="White" Grid.Row="1" Grid.Column="4" Text="Digit. Correct"/>
+                    <TextBlock x:Name="StaticLabel58_Copy" Margin="10,9.333,9.667,9.667" TextWrapping="Wrap" Foreground="White" Grid.Row="1" Grid.Column="5" Text="Total" RenderTransformOrigin="1.455,0.378"/>
+                    <TextBox x:Name="Xcorrection2" Margin="10,10.333,10.333,9.333" TextWrapping="Wrap" TextChanged="UI_Xcorrection_textChanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+                    <TextBox x:Name="Xcorrection3" Margin="10,9.667,10.333,10" TextWrapping="Wrap" TextChanged="UI_Xcorrection_textChanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="5"/>
+                    <TextBox x:Name="Ycorrection2" Margin="10.667,10.333,8.333,10.333" TextWrapping="Wrap" TextChanged="UI_Ycorrection_textChanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="4"/>
+                    <TextBox x:Name="Ycorrection3" Margin="9.667,9.667,8.333,10" TextWrapping="Wrap" TextChanged="UI_Ycorrection_textChanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="5"/>
+                    <TextBox x:Name="ExpCorr0" Margin="10,8.667,9.333,10.333" TextWrapping="Wrap" TextChanged="UI_ExpCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="2"/>
+                    <TextBox x:Name="ExpCorr1" Margin="10,9.667,9.333,8.667" TextWrapping="Wrap" TextChanged="UI_ExpCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3"/>
+                    <TextBox x:Name="ExpCorr2" Margin="10,12.333,9.333,9" TextWrapping="Wrap" TextChanged="UI_ExpCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="4"/>
+                    <TextBox x:Name="ExpCorr3" Margin="10,11,9.333,10" TextWrapping="Wrap" TextChanged="UI_ExpCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5"/>
+                    <TextBox x:Name="DigCorr0" Margin="8.667,8.667,9.667,10.333" TextWrapping="Wrap" TextChanged="UI_DigCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="2"/>
+                    <TextBox x:Name="DigCorr1" Margin="9.667,9.667,8.667,8.667" TextWrapping="Wrap" TextChanged="UI_DigCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="3"/>
+                    <TextBox x:Name="DigCorr2" Margin="8.667,10.333,9.667,8" TextWrapping="Wrap" TextChanged="UI_DigCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="4"/>
+                    <TextBox x:Name="DigCorr3" Margin="9.667,9,8.667,9" TextWrapping="Wrap" TextChanged="UI_DigCorr_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="5"/>
+                    <TextBlock x:Name="UI_CorrectTotal0" Margin="10.333,10.667,8.667,8.333" TextWrapping="Wrap" Foreground="White" Grid.Row="2" Grid.Column="5" RenderTransformOrigin="1.455,0.378"/>
+                    <TextBlock x:Name="UI_CorrectTotal1" Margin="10.333,9.333,8.667,10" TextWrapping="Wrap" Foreground="White" Grid.Row="3" Grid.Column="5" RenderTransformOrigin="1.455,0.378"/>
+                    <TextBlock x:Name="UI_CorrectTotal2" Margin="10.333,9,8.667,9.667" TextWrapping="Wrap" Foreground="White" Grid.Row="4" Grid.Column="5" RenderTransformOrigin="1.455,0.378"/>
+                    <TextBlock x:Name="UI_CorrectTotal3" Margin="10.333,9.333,8.667,10" TextWrapping="Wrap" Foreground="White" Grid.Row="5" Grid.Column="5" RenderTransformOrigin="1.455,0.378"/>
+                    <CheckBox x:Name="UI_SensorDrivenExposure" Content="Sensor Driven Exposure" Margin="10,22,8.667,9.667" Foreground="White" Checked="CheckBox_Checked" Grid.ColumnSpan="2" ToolTip="Enables Exposure To be set by reading light sensors " Unchecked="CheckBox_Checked"/>
+                    <TextBox x:Name="UI_SensorCoefifcient" Margin="11.333,22,7,24.667" TextWrapping="Wrap" TextChanged="UI_SensorCoefifcient_Textchanged" VerticalContentAlignment="Center"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" 
+                    	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="4" MinWidth="10" MinHeight="10" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" Padding="0,0,2,0" IsUndoEnabled="True" HorizontalContentAlignment="Center" Grid.Column="2" ToolTip="Coefficient for sensor responce, defined as the number of seconds the sensors would atke to saturate at a brightness of 1 lux. Higher value will increase exposure time and Image brightness."/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Calibration" Margin="-2,0,-1.667,-7.667" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Background="#FF939393">
+                <Grid Background="#FF282828"/>
+            </TabItem>
+            <TabItem Header="Settings" Margin="-2,0,-1.667,-7.667" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Background="#FF939393">
+                <Grid Background="#FF282828" Margin="0,-2,0,1.667" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+            </TabItem>
+            <TabItem Header="Performance" Margin="-2,0,-1.667,-7.667" FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}" Background="#FF939393">
+                <Grid Background="#FF282828">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="194*"/>
+                        <ColumnDefinition Width="641*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="UI_PerfCorrect" Content="ms" Foreground="#FFD0D0D0"
+                		FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                		VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                		Margin="10,5,497,5" Padding="0,0,10,0" ToolTip="L1"
+                		HorizontalContentAlignment="Right" Grid.Row="4" Grid.Column="1" />
+                    <Label x:Name="UI_PerfTaqusition" Content="ms" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,10,497,7" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="1" />
+                    <Label x:Name="UI_PerfTUpdate" Content="ms" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,10,497,10" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Column="1" />
+                    <Label x:Name="Static_Label" Content="Updating" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" />
+                    <Label x:Name="Static_Label_Copy" Content="Aquisition" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="1" />
+                    <Label x:Name="Static_Label_Copy1" Content="Copy" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="2" />
+                    <Label x:Name="Static_Label_Copy2" Content="Correct" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,10,10,5" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="4" />
+                    <Label x:Name="Static_Label_Copy3" Content="Write" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,11,10,10" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="5" />
+                    <Label x:Name="UI_PerfWrite" Content="ms" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,5,497,6" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="1" />
+                    <Label x:Name="UI_PerfCaptureTotal" Content="ms" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Margin="10,5,497,7" Grid.Row="3" Grid.Column="1" />
+                    <Label x:Name="Static_Label_Copy4" Content="Total" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,5,10,7" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Row="3" />
+                    <Label x:Name="UI_PerfCopy" Foreground="#FFD0D0D0"
+                    	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+                    	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+                    	Margin="10,10,497,10" Grid.Row="2" Padding="0,0,10,0" ToolTip="L1"
+                    	HorizontalContentAlignment="Right" Grid.Column="1" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBox x:Name="UI_IP_Input" Margin="0.667,1"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" TextWrapping="Wrap"
+        	Cursor="Pen" ToolTip="Enter Target's IP" Text="" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A"
+        	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="15" BorderThickness="1"
+        	MinWidth="10" MinHeight="10" Padding="5,0,0,0" VerticalScrollBarVisibility="Disabled"
+        	HorizontalScrollBarVisibility="Disabled" IsUndoEnabled="False" TextChanged="AlphanumericTextboxInputCheck" Grid.Column="1" />
+        <TextBox x:Name="UI_Port_Input" Margin="1.333,1,2.333,1"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" TextWrapping="Wrap" Background="#FF2C2C2C" BorderBrush="#FF5A5A5A"
+        	Foreground="White" FontWeight="SemiBold" MaxLines="1" MaxLength="5" MinWidth="10" MinHeight="10"
+        	Padding="5,0,0,0" VerticalScrollBarVisibility="Disabled"
+        	HorizontalScrollBarVisibility="Disabled" Cursor="Pen" ToolTip="Target's Port Number" TextChanged="NumericTextboxInputCheck" Grid.Column="2" />
+        <Button x:Name="UI_Connect_Button" Content="Connect" Margin="1,1,1.333,1" Click="TryToConnect"
+        	Background="#FF363636" Foreground="White" MinWidth="10" MinHeight="10"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" ToolTip="Tries to connect to target" Focusable="False" />
+        <ProgressBar x:Name="UI_Progress" Margin="1,1.333,1,0" Value="0" IsIndeterminate="false"
+        	Background="#FF2C2C2C" BorderBrush="#FF5A5A5A" MinWidth="10"
+        	SnapsToDevicePixels="True" MinHeight="10" Grid.Row="3" Grid.ColumnSpan="7">
+            <ProgressBar.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="DarkGreen" Offset="0.552" />
+                    <GradientStop Color="#FF004600" Offset="0.404" />
+                    <GradientStop Color="#FF2C2C2C" Offset="1" />
+                    <GradientStop Color="#FF2C2C2C" />
+                    <GradientStop Color="DarkGreen" Offset="0.471" />
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+        <Label x:Name="UI_Feedback" Content="Ready" Margin="0,0.333,1,3.667" Foreground="#FFD0D0D0"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light" Padding="5,0,0,0" Grid.Row="2" Grid.ColumnSpan="7"
+		/>
+        <Label x:Name="UI_Cameras_Connected" Content="" Foreground="#FFD0D0D0"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" FontWeight="Medium" FontFamily="Segoe UI Light"
+        	Margin="0,1,40,1" Padding="0,0,10,0" ToolTip="L1"
+        	HorizontalContentAlignment="Right" Grid.Column="4" />
+        <Button x:Name="UI__Reinitialise_Button" Content="Reinitialise" Margin="1.667,1" Click="Reinit"
+        	Background="#FF363636" Foreground="White" MinWidth="10" MinHeight="10"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" ToolTip="This does stuff" Grid.Column="3" IsEnabled="False" />
+        <Button x:Name="UI__Shutdown_button" Margin="1.333,1,3,1" Click="Shutdown"
+        	Background="#FF363636" Foreground="#FFC9C9C9" MinWidth="10" MinHeight="10"
+        	FontSize="{Binding ActualHeight, Converter={StaticResource fontSizeCon}, RelativeSource={RelativeSource Self}}"
+        	VerticalContentAlignment="Center" ToolTip="Needs to be clicked twice to have an effect" Grid.Column="5" BorderBrush="#FF7B0000" Grid.ColumnSpan="2" IsEnabled="False" >
+            <Image x:Name="UI_Image_Shutdown" RenderTransformOrigin="0.493,0.478" Source="Resources/Shut Down.png"/>
+        </Button>
+        <Image x:Name="UI_image_connection" RenderTransformOrigin="0.493,0.478" Source="Resources/NoConnection.png" Margin="1,0.333,1,0.667" Grid.Column="6" Grid.Row="2"/>
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="34" Margin="70,1,0,0" VerticalAlignment="Top" Width="35" Source="Resources/ApertureIcon.png"/>
+
+
+    </Grid>
+
+
+</Window>
