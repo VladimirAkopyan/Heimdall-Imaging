@@ -1,5 +1,5 @@
 #Heimdall Imaging#
-This project lets you use machine vision cameras for infrared / multispectral imaging on UAVs/Drones.
+This is an almost year-old project lets you use machine vision cameras for infrared / multispectral imaging on UAVs/Drones.
 That is accomplished by combining them into a Multi-Camera array — that is placing a spectral filter in front of every camera and carefully aligning them.
 The software combines monochrome frames from any number of cameras into a multi-channel tiff, that can be later post-prossed like any 'normal' image. 
 You will need Machine vision cameras (this software is designed for Ximea), light sensors from http://www.yoctopuce.com/, and a single-board computer such as Intel NUC. 
