@@ -6,7 +6,14 @@ You will need Machine vision cameras (this software is designed for Ximea), ligh
 The solution requires LibTiff.Net and Ximea's library to build. 
 When using the software, it is desirable to configure DHCP on the single-board computer. 
 
-There are three projects in the solution, each produces an executable for a different purpose.  
+##Documents##
+There is a PDF user manual and a broshure, they describe the workflow and some key characteristics in more detail.  
+
+##3D models##
+Included are 3D models for an enclosure. The enclosure is for 4 Ximea MQ013MG cameras each with a Narrowbard filter and an intel NUC. It can be mounted on a large Quadcopter. The models are in Autodesk Inventor and STL file formats. 
+
+##Code##
+There are three projects in the solution, each produces an executable for a different purpose.
 
 ###Spectral Command###
 End user application written in C# and WPF. It connects to the camera over Wi-Fi, and allows the user to align channels,
