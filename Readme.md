@@ -1,5 +1,7 @@
 #Heimdall Imaging#
-This project lets you use machine vision cameras for infrared / multispectral imaging on UAVs/Drones. The code isn;t great, but demonstrates the key ideas. 
+This project lets you use machine vision cameras for infrared / multispectral imaging on UAVs/Drones. The code isn't great, but it does work and implement the principles. 
+My article on Medium explains it's purpose:
+https://medium.com/vladprojects/origins-of-quickbird-and-anywave-part-1-d7e3f60ba0fb#.lpsid7unc
 
 That is accomplished by combining them into a Multi-Camera array — that is placing a spectral filter in front of every camera and carefully aligning them.
 The software combines monochrome frames from any number of cameras into a multi-channel tiff, that can be later post-prossed like any 'normal' image. 
